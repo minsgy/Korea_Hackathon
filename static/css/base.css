@@ -1,0 +1,254 @@
+/* 나눔바른고딕 - 본문과 작은 글자에 쓰임
+폰트 웨이트로 조절 300:light, 400:medium, 700:bold */
+
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 300;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
+}
+
+/* 지마켓 - 제목이나 강조에 쓰임
+폰트 패밀리로 조절 - medium, bold, light */
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ---------------------- */
+
+:root {
+    --main-width: 1100px;
+
+    --anaso-lightgray: #F2F2F2;
+    --anaso-green: #7EDBB0;
+    --anaso-darkgray: #757575;
+    --anaso-gray: #ADABAB;
+    --anaso-red: #F35151;
+}
+
+/* ---------------------- */
+
+.green {
+    color: var(--anaso-green);
+}
+
+.gray {
+    color: var(--anaso-darkgray);
+}
+
+.black-btn {
+    background-color: black;
+    color: #fff;
+    transition: .3s;
+}
+
+.black-btn:hover {
+    background-color: var(--anaso-green);
+    color: #fff;
+}
+
+.green-btn {
+    background-color: var(--anaso-green);
+    color: #fff;
+    transition: .3s;
+}
+
+.green-btn:hover {
+    background-color: #36A270;
+    color: #fff;
+}
+
+.red-btn {
+    background-color: var(--anaso-red);
+    color: #fff;
+    transition: .3s;
+}
+
+.red-btn:hover {
+    background-color: #C83B3B;
+    color: #fff;
+}
+
+/* ---------------------- */
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #000;
+    text-decoration: none;
+}
+
+* {
+    font-family: 'NanumBarunGothic';
+}
+
+/* ---------------------- */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 10px 40px 10px 40px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-bottom: 1px solid #BABABA;
+    z-index: 10;
+}
+
+.header-links img {
+    padding-top: 3px;
+    width: 135px;
+    height: 40px;
+    float: left;
+}
+
+.header-links nav {
+    padding: 8px 0;
+    float: left;
+}
+
+.header-links nav a:first-child {
+    padding-left: 20px;
+}
+
+.header-links nav a {
+    padding: 0 10px;
+    font-family: 'GmarketSansMedium';
+    font-weight: 700;
+    font-size: 25px;
+    text-decoration: none;
+    color: black;
+    position: relative;
+}
+
+.header-links nav a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    top: 115%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--anaso-green);
+    transition: .5s;
+}
+
+
+.header-links nav a:hover::after {
+    width: 30%;
+}
+
+
+/* ---------------------- */
+
+.header-btns {
+    padding-top: 2px;
+}
+
+.header-btns button {
+    width: 110px;
+    height: 40px;
+    padding-top: 4px;
+    font-family: 'GmarketSansMedium';
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.header-btns button:first-child {
+    margin-right: 3px;
+}
+
+.header-btns button:last-of-type {
+    width: 90px;
+}
+
+/* ---------------------- */
+
+main {
+    min-height: 100%;
+    padding: 70px 0 0 0;
+}
+
+/* ---------------------- */
+
+footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    background-color: #E9E9E9;
+    border-top: 1px solid #A8A8A8;
+    padding: 20px 40px;
+}
+
+.footer-logos img {
+    margin-bottom: 5px;
+}
+
+.footer-logos span {
+    display: block;
+    font-size: 13px;
+    color: #707070;
+}
+
+.footer-logos span:first-of-type {
+    margin-bottom: 20px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #000;
+}
+
+/* ---------------------- */
+
+.footer-developers {
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-developers span {
+    display: block;
+    font-size: 15px;
+    margin-right: 30px;
+    color: #707070;
+}
+
+.footer-developers>span:first-of-type {
+    margin-right: 60px;
+}
+
+.footer-developers span:first-of-type {
+    margin-bottom: 20px;
+    font-size: 17px;
+    font-weight: 700;
+    color: #000;
+}

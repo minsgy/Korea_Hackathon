@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/project_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- ----------여기가 컨텐츠 --------------- -->
+    <main>
+        <div class="project-main">
+            <button onclick="history.back()">뒤로가기</button>
+            <div class="project-detail-div">
+                <div>
+                    <span class="project-title">{{project.title}}</span>
+                    <span class="project-date">{{project.date}}</span>
+                </div>
+
+                <p class="tag-list">
+                    {% for tags in project.tags.all %}
+                    <button class="tag tag1">{{tags.keyword_name}}</button>
+                    {% endfor %}
+                </p>
+            </div>
+            <div class="project-content">
+             <!-- content 들어갈 자리  -->
+                {{project.description}}
+            </div>
+        </div>
+    </main>
+
+{% endblock %}
+<!-- ----------여기가 컨텐츠 --------------- -->
+
+ 

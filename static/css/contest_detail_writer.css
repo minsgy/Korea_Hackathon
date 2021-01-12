@@ -1,0 +1,265 @@
+/* 스몰 헤더 */
+.small-header {
+    width: var(--main-width);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: #fff;
+}
+
+/* 검색 바 */
+.search-bar input {
+    float: left;
+    width: 300px;
+    height: 35px;
+    line-height: normal;
+    padding: .8em .5em;
+    font-size: 16px;
+    border: 0;
+    border-bottom: 2px solid #000;
+    outline-style: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.search-bar img {
+    float: left;
+    width: 20px;
+    height: 20px;
+    padding: 8px 0 0 5px;
+}
+
+/* -------------------------------- */
+
+.small-header nav {
+    margin: 30px 0 10px 0;
+}
+
+.small-header a {
+    font-size: 20px;
+    color: #000;
+    text-decoration: none;
+    margin-right: 3em;
+}
+
+.small-header a:last-of-type {
+    margin: 0;
+}
+
+.small-header a:hover {
+    color: var(--anaso-green);
+    font-weight: 700;
+}
+
+
+/* -------------------------------- */
+/* 디테일 메인 섹션 */
+
+section {
+    width: 100%;
+    height: 100%;
+    background-color: var(--anaso-lightgray);
+    padding: 50px 0 70px 0;
+}
+
+.post-bg {
+    width: var(--main-width);
+    min-height: 1100px;
+    background-color: #fff;
+    box-shadow: 1px 3px 5px var(--anaso-darkgray);
+    margin: 0 auto;
+    padding: 50px;
+}
+
+/* -------------------------------- */
+/* 인포 박스 div */
+
+/* 수정 삭제 */
+.edit-and-delete {
+    text-align: right;
+}
+
+.edit-and-delete a {
+    color: #000;
+    text-decoration: none;
+}
+
+.edit-and-delete a:hover {
+    text-decoration: underline;
+}
+
+/* 카테고리 */
+.info-box>span:first-of-type {
+    display: inline-block;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    padding: 10px 5px 10px 10px;
+    font-size: 30px;
+    font-weight: 700;
+    background-color: var(--anaso-green);
+    color: #fff;
+    border-radius: 15px;
+}
+
+/* 제목 */
+.info-box>span:nth-of-type(2) {
+    margin-left: 15px;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.info-box>p {
+    margin: 20px 0;
+}
+
+.info-box>p:first-of-type span {
+    font-size: 20px;
+}
+
+.info-box>p:first-of-type span:first-of-type {
+    font-size: 20px;
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+.info-box>p:last-of-type span {
+    color: var(--anaso-darkgray);
+}
+
+.info-box>p:last-of-type span:nth-of-type(odd) {
+    margin-right: 10px;
+}
+
+/* -------------------------------- */
+/* 전체 인포 디테일 박스 div */
+
+.info-detail-box {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 10px;
+    margin: 30px 0 10px 0;
+}
+
+.info-detail-box p span {
+    font-size: 20px;
+}
+
+.info-detail-box p span:first-of-type {
+    font-weight: 700;
+    margin-right: 15px;
+    color: #000
+}
+
+.info-detail-box>p:first-of-type>span:nth-of-type(2),
+.info-detail-box>p:first-of-type>span:nth-of-type(3) {
+    font-weight: 700;
+    color: var(--anaso-red);
+}
+
+.info-detail-box>p:first-of-type>span:nth-of-type(3) {
+    margin-right: 5px;
+}
+
+.info-detail-box p span {
+    color: var(--anaso-darkgray);
+}
+
+.can-btn {
+    width: 160px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 23px;
+    font-weight: 700;
+    border-radius: 10px;
+}
+
+.cant-btn {
+    width: 180px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 23px;
+    font-weight: 700;
+    border-radius: 10px;
+    background-color: var(--anaso-gray);
+    color: #fff;
+}
+
+/* -------------------------------- */
+/* 본문 div */
+
+.body-box {
+    height: 500px;
+    margin: 30px 0;
+}
+
+.body-box p {
+    font-size: 18px;
+    margin: 10px;
+}
+
+/* -------------------------------- */
+/* 지원자들 div */
+
+.applicants-box {
+    margin: 30px 0;
+}
+
+.applicants-box>span:first-of-type {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.applicants-list-box {
+    width: 800px;
+    height: 200px;
+    margin: 0 auto;
+    margin-top: 30px;
+    border: 1px solid var(--anaso-gray);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.applicants-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 2fr;
+    padding: 10px;
+}
+
+/* 지원자들 리스트 div */
+.applicants-card span {
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.applicants-card span:first-of-type {
+    font-weight: 700;
+}
+
+/* 뱃지 div  */
+.applicants-badges {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.applicants-badges img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.applicants-buttons button {
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 5px;
+}

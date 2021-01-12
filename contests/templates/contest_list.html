@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head %}
+<!-- 그 밖의 css를 넣어주세요. 아래는 예시입니다. -->
+<!-- <link rel="stylesheet" href="{% static 'css/main.css' %}"> -->
+<link rel="stylesheet" href="{% static 'css/contest_list.css' %}">
+{% endblock %}
+{% block content %}
+<main>
+    <div class="small-header">
+        <div class="search-bar">
+            <input type="text" placeholder="찾으시는 공모전이 있나요?">
+            <a href=""><img src="{% static 'images/search.png' %}" alt="검색 아이콘"></a>
+        </div>
+        <nav>
+            <a href="">전체</a>
+            <a href="">기획/아이디어</a>
+            <a href="">디자인/광고/마케팅</a>
+            <a href="">사진/영상/UCC</a>
+            <a href="">문학/수기/시나리오</a>
+        </nav>
+    </div>
+    <section>
+        <div class="nav-links-box">
+            <div>
+                <a class="not-btn" href="?sort=timeline">최신순</a>
+                <a class="not-btn" href="?sort=days">마감기한순</a>
+                <a class="not-btn" href="?sort=hit">조회수순</a>
+                <a class="not-btn" href="?my_post=post">내가 쓴 글</a>
+            </div>
+            <div>
+                <a class="not-btn" href="{% url 'contest_create' %}">새 글 쓰기</a>
+            </div>
+        </div>
+        <div class="contest-list">
+            <!-- 카드 시작 -->
+            {% for contest in contests %}
+            <a href="{% url 'contest_detail' contest.id %}">
+                <div class="contest-card">
+                    <img src="{{ contest.poster.url }}" alt="poster">
+                    <div class="contest-card-title">
+                        <!-- 카테고리 -->
+                        <span>{{ contest.category }}</span>
+                        <!-- 남은 기한 -->
+                        <span>D - </span><span>{{ contest.get_remain_days }}</span>
+                    </div>
+                    <div class="contest-card-info">
+                        <!-- 게시글 이름 -->
+                        <span>{{contest.title}}</span>
+                        <!-- 공모전 이름  -->
+                        <span>{{ contest.contest_name }}</span>
+                        <p>
+                            <span>작성자</span><span>{{ contest.author.name }}</span>
+                            <span>신청자수</span><span>{{ contest.get_number_of_not_confirmed_members }}</span>
+                            <span>조회수</span><span>{{ contest.hit_count }}</span>
+                        </p>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+            <!-- 카드 끝 -->
+        </div>
+    </section>
+    </section>
+</main>
+{% endblock %}
+{% block script %}
+<!-- 그 밖의 script를 넣어주세요. 아래는 예시입니다. -->
+<!-- <script src="{% static 'js/main.js' %}"></script> -->
+{% endblock %}

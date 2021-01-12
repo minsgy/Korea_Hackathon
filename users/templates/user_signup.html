@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/user_signup.css' %}">
+{% endblock %}
+
+{% block content %}
+<main>
+    <form action="{% url 'user_signup' %}" enctype="multipart/form-data" method="POST">
+        {% csrf_token %}
+        <div class="join-div">
+            <p>회원가입</p>
+            <p>
+                <img id="image_section" src="{% static 'images/default_poster.png' %}">
+            </p>
+            <div class="filebox">
+                <label for="ex_file">프로필 사진 업로드</label>
+                <input type="file" name="image" id="ex_file">
+              </div>
+            <p>
+                <input type="text" name="name" placeholder="이름을 입력하세요." required>
+                <input type="text" name="university" placeholder="재학 중인 학교를 입력하세요." required>
+                <input type="text" name="major" placeholder="전공 명을 입력하세요." required>
+                <input type="text" name="phone_number" placeholder="휴대폰 번호를 입력하세요." required>
+                <input type="email" name="email" placeholder="이메일을 입력하세요." required>
+                <input type="text" name="username" placeholder="아이디를 입력하세요." required>
+                <input type="password" name="password1" placeholder="비밀번호를 입력하세요." required>
+                <input type="password" name="password2" placeholder="비밀번호를 한 번 더 입력하세요." required>
+                <input type="text" name="description" placeholder="한 줄 소개를 입력하세요." required>
+                <input type="text" name="hashtags" placeholder="나를 나타내는 태그를 입력하세요." required>
+                <span class="tag-info">태그는 ','으로 구분해주세요.</span>
+                <button type="submit">확인</button>
+            </p>
+        </div>
+    </form>
+</main>
+{% endblock %}
+
+{% block script %}
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+function readURL(input) {
+ if (input.files && input.files[0]) {
+  var reader = new FileReader();
+  
+  reader.onload = function (e) {
+   $('#image_section').attr('src', e.target.result);  
+  }
+  
+  reader.readAsDataURL(input.files[0]);
+  }
+}
+// 이벤트를 바인딩해서 input에 파일이 올라올때 위의 함수를 this context로 실행합니다.
+$("#ex_file").change(function(){
+   readURL(this);
+});
+</script>
+{% endblock %}

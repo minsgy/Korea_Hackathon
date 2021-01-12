@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- 컨텐츠  -->
+<main>
+    <div class="main-wrap">
+        {% if not user.is_authenticated %}
+        <!-- Main Page banner 1번째 -->
+        <section class="section">
+            <div class="flex-1">
+                <div id="main-img"></div>
+                <div class="main-content-wrap">
+                    <div class="main-content">
+                        <strong class="colors">'나'</strong>를 표현하는<br>
+                        가장 쉬운 방법<br>
+                        <h2>안나소</h2>
+                    </div>
+                    <div class="main-content2">
+                        <p>이미 회원이신가요?<a class='colors' href="{% url 'user_login' %}">로그인</a></p>
+                        <button class="black-btn header-btns" onclick="location.href='{% url 'user_signup' %}';">SIGN
+                            UP</button>
+                        <p>회원가입 시 <span class="colors">이용약관</span> 및 <span class="colors">개인정보처리방침</span>에<br>동의하게 됩니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Page banner 2번째 -->
+        <section class="section2">
+            <div class="section2-box">
+                <img class="main-pic" src="{% static 'images/main_2.png' %}">
+                <div class="section2-letter">
+                    <p>안나소를 이용하면</p>
+                    <p>이런 멋진 포트폴리오를</p>
+                    <p>
+                        작성하는 시간 단
+                        <span class="hight-light">10분</span>
+                    </p>
+                    <p>
+                        <span>안나소를 통해</span>
+                        <span class="hight-light">다양한 포트폴리오</span>
+                        <span>를 만나보세요.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        {% else %}
+         <!-- Main Page banner 1번째 -->
+                <section class="section">
+                    <div class="flex-1">
+                        <div id="main-img2"></div>
+                        <div class="main-content-wrap">
+                            <div class="main-content">
+                                <strong class="colors">'나'</strong>를 표현하는<br>
+                                가장 쉬운 방법<br>
+                                <h2>안나소</h2>
+                            </div>
+                            <div class="main-content2">
+                                <button class="black-btn header-btns" onclick="location.href='{% url 'portfolio_list' %}';">내 포트폴리오로</button>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                {% endif %}
+    </div>
+</main>
+
+{% endblock %}

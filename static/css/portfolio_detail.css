@@ -1,0 +1,255 @@
+/* 나눔바른고딕 - 본문과 작은 글자에 쓰임
+폰트 웨이트로 조절 300:light, 400:medium, 700:bold 
+NanumBarunGothic */
+.contest-card:nth-of-type(1) {
+    width: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#atag {
+    font-size: 30px;
+
+}
+
+main {
+    width: 1100px;
+    margin: 0 auto;
+    font-family: NanumBarunGothic;
+}
+
+.setion1-div {
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 10vh;
+}
+
+/* -----레이아웃 설정------ */
+.pofol-profile-div1 img {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    padding: 4vh 4vh 2vh 4vh;
+}
+
+/* -----프로필 수정 버튼------ */
+.pofol-profile-edit {
+    height: 0;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: right;
+    padding: 10px 45px 0 0;
+}
+
+.pofol-profile-edit:hover {
+    cursor: pointer;
+    color: var(--anaso-green);
+    transition: .3s;
+}
+
+
+/* ----폰트 스타일 설정-----  */
+
+/* 대학교 */
+.pofol-profile-div1 p:nth-of-type(2) {
+    font-size: 22px;
+    font-weight: 300;
+    /* letter-spacing: 5px; */
+}
+
+/* 학과 */
+.pofol-profile-div1 p:nth-of-type(2) span {
+    display: block;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 5px;
+}
+
+/* 
+이름 */
+.pofol-profile-div1 p:nth-of-type(3) {
+    font-size: 38px;
+    font-weight: 700;
+    padding: 5px 0;
+    letter-spacing: 15px;
+}
+
+
+.pofol-profile-div1 p:nth-of-type(4) {
+    padding: 10px 0;
+}
+
+/* 한 마디 */
+.pofol-profile-div1 p:nth-of-type(5) {
+    font-size: 34px;
+    font-weight: 700;
+    padding: 10px 0 0 0;
+}
+
+/* 태그 설정 */
+
+.tag {
+    height: 25px;
+    display: inline-block;
+    font-weight: 300;
+    font-size: 28px;
+    margin-right: 20px;
+}
+
+.tag:nth-of-type(1) {
+    background-color: rgba(248, 190, 114, 0.692);
+}
+
+.tag:nth-of-type(2) {
+    background-color: rgba(250, 123, 118, 0.637)
+}
+
+.tag:nth-of-type(3) {
+    background-color: rgba(87, 194, 135, 0.664)
+}
+
+
+/* 뱃지 설정 */
+.pofol-profile-div2 img {
+    width: 170px;
+    height: 190px;
+    /* border-radius: 50%; */
+    padding: 5px 20px 5px 10px;
+}
+
+/* 뱃지 p */
+.pofol-profile-div2 p:nth-of-type(1) {
+    padding: 3.5vh 0;
+}
+
+/* 전화번호 이메일 */
+.pofol-profile-div2 p:nth-of-type(2) span:nth-of-type(1),
+.pofol-profile-div2 p:nth-of-type(3) span:nth-of-type(1) {
+    font-size: 25px;
+    font-weight: 400;
+    margin-right: 8px;
+    margin-bottom: 10px;
+}
+
+
+.pofol-profile-div2 p:nth-of-type(2) span:nth-of-type(2),
+.pofol-profile-div2 p:nth-of-type(3) span:nth-of-type(2) {
+    font-size: 25px;
+    font-weight: 300;
+}
+
+
+
+
+/* -----------------Section2 ---------------*/
+
+
+.setion-title {
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 8vh 0 2vh 4vh;
+    border-bottom: 2px solid rgba(94, 94, 94, 0.712);
+}
+
+.contest-card-flex {
+    width: 1100px;
+    display: flex;
+    flex-flow: wrap;
+}
+
+
+.contest-card {
+    width: 280px;
+    height: 390px;
+    margin: 30px 30px;
+    box-shadow: 2px 2px 3px 3px #e4e4e442;
+    padding: 10px;
+}
+
+.contest-card:hover {
+    cursor: pointer;
+    box-shadow: 3px 5px 8px 5px #bebebe8f;
+    transition: .3s;
+    transform: translate(0, -5%);
+}
+
+.contest-card img {
+    height: 270px;
+    width: 280px;
+}
+
+.contest-card-title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 400;
+    padding-top: 5px;
+    padding-bottom: 8px;
+}
+
+.contest-card-info {
+    padding: 10px 0;
+    margin: 0 38px;
+}
+
+.contest-role {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.contest-teamleader {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.contest-date {
+    font-size: 15px;
+    font-weight: 300;
+    float: right;
+}
+
+.project-date {
+    padding: 10px 0 0 0;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.project-title {
+    padding: 10px 0px;
+    font-size: 30px;
+    font-weight: 400;
+    /* padding-top: 5px;
+    padding-bottom: 10px; */
+}
+
+.project-date span:nth-of-type(2),
+.project-date span:nth-of-type(3) {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--anaso-gray);
+}
+
+.project-card-tag {
+    font-size: 15px;
+    color: white;
+    padding: 5px;
+    border-radius: 12px;
+}
+
+.card-tag1 {
+    background-color: rgb(82, 70, 255);
+}
+
+.card-tag2 {
+    background-color: rgb(255, 190, 70);
+}
+
+.card-tag3 {
+    background-color: rgb(130, 185, 109);
+}
+
+.contest-card:nth-of-type(3) span {
+    padding-left: 5px;
+}

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/project_edit.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- 여기부터 컨텐츠 부분 입니다.  -->
+    <main>
+        <form method="POST" action="{% url 'project_create' %}" class="full-div">
+                {% csrf_token %}
+                <div class="title-info-div">
+                    <p class="title-text">
+                        제목
+                        <input class="inputbox title" name="title" type="text" placeholder="제목을 입력하세요. " required>
+                    </p>
+                    <p class="title-text">
+                        날짜 
+                        <input class="inputbox date-width" name="project_date" type="date" required>
+                        태그
+                        <input class="inputbox date-width" name="project_tags" type="text" placeholder="태그는 ','으로 구분 됩니다." required>
+                        역할
+                        <input class="inputbox date-width2" name="position" type="text" placeholder="역할을 입력하세요." required>
+                    </p>
+                </div>
+                <!-- ------에디터 들어가는 부분 ------- -->
+                <div class="editor">
+                {{form.media}}
+                {{form.as_p}}
+                </div>
+                <div class="button-div">
+                    <button class="submit-button" type="submit">작성하기</button>
+                </div>
+        </form>
+    </main>
+{% endblock %}   
+
+{% block script %}
+<script type="text/javascript">
+var labels = document.getElementsByTagName("label")
+        for (i = 0; i < labels.length; i++) {
+            if (labels[i].parentNode.tagName === 'P') {
+                labels[i].parentNode.remove()
+            }
+        }
+</script>
+{% endblock %}
+
+<!-- 여기까지가 컨텐츠 부분 입니다.  -->

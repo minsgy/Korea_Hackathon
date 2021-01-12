@@ -1,0 +1,65 @@
+/* -------------------------------- */
+/* 지원자들 div */
+.recruit-boxes {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 20px 0;
+}
+
+/* 모집 중인 포지션 div */
+.recruiting-box {
+    width: 50%;
+}
+
+.recruiting-box>span:first-of-type,
+.recruitment-completed-box>span:first-of-type {
+    display: block;
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.recruiting-box>span:first-of-type {
+    color: var(--anaso-green);
+}
+
+.recruitment-completed-box>span:first-of-type {
+    color: var(--anaso-red);
+}
+
+/* 모집 완료된 포지션 div */
+.recruitment-completed-box {
+    width: 50%;
+}
+
+/* -------------------------------- */
+/*  사람 카드 */
+.recuriting-card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 15px;
+}
+
+.recuriting-card span {
+    line-height: 30px;
+    font-size: 20px;
+}
+
+.recuriting-card>span:nth-of-type(odd) {
+    margin-right: 30px;
+}
+
+.recuriting-card>span:first-of-type {
+    font-weight: 700;
+}
+
+/* 지원하기 버튼 */
+.recuriting-card>button {
+    width: 90px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 5px;
+}

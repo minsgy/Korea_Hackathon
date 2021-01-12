@@ -1,0 +1,75 @@
+/* font-family: 'NanumBarunGothic';
+    weight 300 400 700 */
+
+
+body ::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+.project-main {
+    margin: 0 auto;
+
+    /* -----너비값------ */
+    width: 1100px;
+    padding: 0 20px;
+    border-left: 1px solid #e4e4e4;
+    border-right: 1px solid #e4e4e4;
+    box-shadow: 5px 0px 10px #e4e4e4, -5px 0px 8px #e4e4e477;
+
+}
+
+.project-content {
+    /* border: 1px solid black; */
+    overflow-y: auto;
+    /* height: 700px; */
+    padding: 3vh 0;
+    margin: 3vh 0;
+}
+
+.project-detail-div {
+    padding-top: 20px;
+}
+
+.project-title {
+    font-family: 'NanumBarunGothic';
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.project-date {
+    font-family: 'NanumBarunGothic';
+    font-size: 20px;
+    font-weight: 300;
+    padding-top: 32px;
+    float: right;
+}
+
+.tag-list {
+    margin-top: 2vh;
+
+}
+
+.tag {
+    font-family: 'NanumBarunGothic';
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    border-radius: 20px;
+    border-style: none;
+    padding: 10px;
+    margin-right: 1vh;
+}
+
+.tag1 {
+    background-color: coral;
+}
+
+.tag2 {
+    background-color: cornflowerblue;
+}
+
+.tag3 {
+    background-color: darkgoldenrod;
+}

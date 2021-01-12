@@ -1,0 +1,165 @@
+/* 파일 업로드 버튼 커스텀 */
+
+.mypage-div {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.filebox {
+    text-align: center;
+}
+
+.filebox label {
+    margin: 10px 0;
+    font-size: 22px;
+    font-weight: 400;
+    display: inline-block;
+    padding: .5em .75em;
+    color: #fff;
+    font-size: inherit;
+    line-height: normal;
+    vertical-align: middle;
+    background-color: var(--anaso-green);
+    cursor: pointer;
+    border: 1px solid var(--anaso-green);
+    border-radius: .5em;
+    -webkit-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+}
+
+.filebox label:hover {
+    background-color: rgb(3, 148, 100);
+    border: 1px solid rgb(3, 148, 100);
+}
+
+.filebox label:active {
+    background-color: var(--anaso-green);
+}
+
+.filebox input[type="file"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.mypage-div p {
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+/* img 설정 */
+.mypage-div p:nth-of-type(2) img {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    margin: 30px 0;
+
+}
+
+
+/* 내 정보 글씨 */
+.mypage-title {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 20px 0;
+    padding-top: 30px;
+}
+
+.mypage-info {
+    margin: 8vh 0;
+}
+
+.mypage-info p {
+    width: 500px;
+    margin: 0 auto;
+    text-align: left;
+    padding-bottom: 35px;
+}
+
+.mypage-info p span:nth-of-type(1) {
+    font-size: 23px;
+    font-weight: 400;
+    margin-bottom: 35px;
+    margin-right: 20px;
+}
+
+.mypage-info p span:nth-of-type(2) {
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 35px;
+}
+
+.mypage-div p:nth-of-type(4) {
+    width: 500px;
+    margin: 0 auto;
+
+}
+
+/* 수정 가능 목록 타이틀 */
+.mypage-info p:nth-of-type(5) span {
+    font-size: 22px;
+    font-weight: 700;
+    margin-top: 5vh;
+
+}
+
+.mypage-info p:nth-of-type(5) {
+    padding-top: 5vh;
+}
+
+
+/* input 설정 */
+.mypage-div input {
+    display: block;
+    font-size: 20px;
+    font-weight: 300;
+    width: 500px;
+    border-style: none;
+    border-bottom: 1px solid black;
+    margin-top: 10px;
+    margin-bottom: 35px;
+    text-align: left;
+}
+
+.mypage-div input:focus {
+    outline-style: none;
+}
+
+
+/*태그 설명 */
+.tag-info {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--anaso-green);
+    display: block;
+    text-align: left;
+    margin: 5px;
+    text-align: left;
+
+}
+
+.mypage-div button {
+    display: block;
+    margin: 0 auto;
+    width: 500px;
+    font-size: 25px;
+    height: 50px;
+    font-weight: 400;
+    color: white;
+    background-color: rgb(0, 0, 0);
+    border-radius: 5px;
+    margin-top: 10vh;
+
+}
+
+.mypage-div button:hover {
+    background-color: var(--anaso-green);
+    transition: .3s;
+}

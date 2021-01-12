@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/portfolio_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+<span style="display:none;">{{ users.update_hitcount }}</span>
+<main>
+    <div class="setion1-div">
+        <p class="pofol-profile-edit">
+            {% if user == users %}
+            <a href="{% url 'user_editor' %}">
+                내 정보수정
+            </a>
+            {% endif %}
+        </p>
+        <div class="pofol-profile-div1">
+            <p>
+                <img src="{{users.image.url}}" class="pofol-profile-img">
+            </p>
+            <p>
+                {{users.university}}
+                <span>
+                    {{users.major}}
+                </span>
+            </p>
+
+            <p>
+                {{users.name}}
+            </p>
+
+            <p>
+                {% for hashtags in users.hashtags.all %}
+                <span class="tag">#{{hashtags.tag_name}}</span>
+                {% endfor %}
+            </p>
+
+            <p  class="pofol-word">
+                {{users.description}}
+            </p>
+
+        </div>
+        <div class="pofol-profile-div2">
+            <p>
+                <!-- 조회수 뱃지 -->
+                {% if users.hit_count >= 20 %}
+                <img src="{% static 'images/badge/atendee_badge.png' %}">
+                {% endif %}
+                <!-- 프로젝트 뱃지 -->
+                {% if users.project.count >= 5 %}
+                <img src="{% static 'images/badge/project_badge.png' %}">
+                {% endif %}
+                <!-- 공모전 게시글 뱃지 -->
+                {% if users.contest_set.count >= 5 %}
+                <img src="{% static 'images/badge/planner_badge.png' %}">
+                {% endif %}
+                <!-- 공모전 참여 뱃지 -->
+                {% if users.confirmed_member_set.count >= 5 %}
+                <img src="{% static 'images/badge/atendee_badge.png' %}">
+                {% endif %}
+            </p>
+            
+            <!-- 본인이 아닐 시 볼 수 없음. -->
+            {% if users == user %}
+                <p>
+                    <span>전화번호</span>
+                    <span class="pofol-num">{{users.phone_number}}</span>
+                </p>        
+                <p>
+                    <span>이메일</span>
+                    <span class="pofol-mail">{{users.email}}</span>
+                </p>
+            {% endif %}
+        </div>
+    </div>
+    <!-----------------------Setion 2---------------->
+    <div class="setion2-div">
+        <p class="setion-title">
+            참여 중인 공모전
+        </p>
+         <div class="contest-card-flex">
+            {% for contests in users.contest_set.all %}
+            <div class="contest-card">
+                <img src="{{ contests.poster.url }}">
+                <p class="contest-card-title">
+                    {{contests.contest_name}}
+                </p>
+                <p class="contest-card-info">
+                    <span class="contest-role">역할</span>
+                    <span class="contest-teamleader">팀장</span>
+                    <span class="contest-date">{{contests.timeline}}</span>
+                </p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- ---------------Section 3-------------------- -->
+    <div class="setion3-div">
+        <p class="setion-title">
+            PROJECT
+        </p>
+        <div class="contest-card-flex">
+            <a id="atag" href="{% url 'project_create'%}">
+                <div class="contest-card">
+                       +   
+                </div>
+            </a>
+            {% for projects in users.project.all %}
+            <div class="contest-card">
+                <img class="contest-card-img" src="{{projects.thumnail.url}}" height="300px" width="300px">
+                <p class="project-date">
+                    <span>{{projects.project_date}}</span>
+                    {% if users == user %}
+                    <a href="{% url 'project_update' projects.pk %}">
+                        <span>수정</span>
+                    </a>
+                    <a href="{% url 'project_delete' projects.pk %}">
+                        <span>삭제</span>
+                    </a>
+                    {% endif %}
+                </p>
+                <p class="project-title">
+                    <span>{{projects.title}}</span>
+                </p>
+                <p>
+                    {% for tags in projects.tags.all %}
+                    <span class="project-card-tag card-tag1">{{tags.keyword_name}}</span>
+                    {% endfor %}
+                </p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,111 @@
+/* 파일 업로드 버튼 커스텀 */
+.filebox label {
+    margin: 10px 0;
+    font-size: 22px;
+    font-weight: 400;
+    display: inline-block;
+    padding: .5em .75em;
+    color: #fff;
+    font-size: inherit;
+    line-height: normal;
+    vertical-align: middle;
+    background-color: var(--anaso-green);
+    cursor: pointer;
+    border: 1px solid var(--anaso-green);
+    border-radius: .5em;
+    -webkit-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+}
+
+.filebox label:hover {
+    background-color: rgb(3, 148, 100);
+    border: 1px solid rgb(3, 148, 100);
+}
+
+.filebox label:active {
+    background-color: var(--anaso-green);
+}
+
+.filebox input[type="file"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+
+.join-div {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.join-div p:nth-of-type(2) img {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+}
+
+/* 회원가입 글씨 */
+.join-div p:nth-of-type(1) {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+
+.join-div p:nth-child(4) input {
+    font-size: 20px;
+    font-weight: 300;
+    width: 500px;
+    display: inline-block;
+    border-style: none;
+    border-bottom: 1px solid black;
+    margin-bottom: 35px;
+}
+
+.join-div p:nth-child(4) {
+    margin: 0 auto;
+    width: 500px;
+    padding-top: 30px;
+}
+
+
+
+.tag-info {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--anaso-green);
+    display: block;
+    text-align: left;
+    margin: 5px;
+}
+
+
+.join-div p:nth-child(4) input:last-of-type {
+    margin-bottom: 0px;
+}
+
+.join-div p:nth-child(4) input:focus {
+    outline: none;
+}
+
+.join-div p:nth-of-type(3) button {
+    display: block;
+    font-size: 18px;
+    width: 500px;
+    height: 50px;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    margin: 8vh 0;
+
+}
+
+.join-div p:nth-of-type(3) button:hover {
+    background-color: var(--anaso-green);
+    transition: .3s;
+}

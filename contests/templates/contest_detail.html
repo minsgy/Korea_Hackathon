@@ -1,0 +1,328 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head %}
+<!-- 그 밖의 css를 넣어주세요. 아래는 예시입니다. -->
+<link rel="stylesheet" href="{% static 'css/contest_detail.css' %}">
+<link rel="stylesheet" href="{% static 'css/contest_detail_viewer.css' %}">
+{% endblock %}
+
+{% block content %}
+<main>
+    <div class="small-header">
+        <div class="search-bar">
+            <input type="text" placeholder="찾으시는 공모전이 있나요?">
+            <a href=""><img src="{% static 'images/search.png' %}" alt="검색 아이콘"></a>
+        </div>
+        <nav>
+            <a href="">전체</a>
+            <a href="">기획/아이디어</a>
+            <a href="">디자인/광고/마케팅</a>
+            <a href="">사진/영상/UCC</a>
+            <a href="">문학/수기/시나리오</a>
+        </nav>
+    </div>
+    <section>
+        <div class="post-bg">
+            <div class="info-box">
+                <div class="edit-and-delete">
+                    <!-- 수정 링크 -->
+                    <a href="{% url 'contest_update' contest.id %}">수정</a>
+                    <span>|</span>
+                    <a href="{% url 'contest_delete' contest.id %}">삭제</a>
+                </div>
+                <!-- 카테고리  -->
+                <span>{{ contest.category }}</span>
+                <!-- 제목 -->
+                <span>{{ contest.title }}</span>
+                <p>
+                    <!-- 공모전 이름 -->
+                    <span>{{ contest.contest_name }}</span>
+                    <!-- 개최 -->
+                    <span>{{ contest.contest_organizer }}</span>
+                </p>
+                <p>
+                    <!-- 날짜 -->
+                    <span>{{ contest.timeline.year }}.{{ contest.timeline.month }}.{{ contest.timeline.day }}</span>
+                    <span>조회수</span>
+                    <!-- 조회수 -->
+                    <span>{{ contest.update_hit_counter }}</span>
+                </p>
+            </div>
+            <hr>
+            <div class="info-detail-box">
+                <p>
+                    <span>마감 기한</span>
+                    <!-- 남은 기간 (디데이) -->
+                    <span>D - </span><span>{{ contest.get_remain_days }}</span>
+                    <!-- 설정한 기한 -->
+                    <span>{{ contest.deadline.year }}.{{ contest.deadline.month }}.{{ contest.deadline.day }}</span>
+                </p>
+                <p>
+                    <span>작성자</span>
+                    <!-- 작성자 이름 -->
+                    <span>{{ contest.author.name }}</span>
+                </p>
+                <p>
+                    <span>신청자수</span>
+                    <span>{{ contest.get_number_of_not_confirmed_members }}</span><span>명</span>
+                </p>
+                {% if get_TO != 0 %}
+                <!-- 팀원 모집 중 완료 버튼 -->
+                <button class="can-btn green-btn" disabled>팀원 모집 중</button>
+                {% else %}
+                <button class="cant-btn" disabled>팀원 모집 완료</button>
+                {% endif %}
+                <p>
+                    <span>주최 기관</span>
+                    <span>{{contest.contest_organizer}}</span>
+                </p>
+                <p>
+                    <span>전체 모집 인원</span>
+                    <span>{{ contest.get_total_number_of_members }}</span><span>명</span>
+                </p>
+                <p>
+                    <span>모집 완료된 인원</span>
+                    <span>{{ contest.get_number_of_confirmed_members }}</span><span>명</span>
+                </p>
+            </div>
+            <hr>
+            <div class="body-box">
+                <!-- 본문 -->
+                {{ contest.detail }}
+            </div>
+            <hr>
+            {% if access == True %}
+            <div class="applicants-box">
+                <span>팀원</span>
+
+                <div style="display: flex; flex-direction:column;" class="applicants-list-box my-team">
+                    {% for role in contest.role_set.all %}
+                    {% for user in role.confirmed_members.all %}
+                    <!-- 카드 시작 -->
+                    <div style=" width: 750px;" class="applicants-card">
+                        <!-- 포지션 이름 -->
+                        <span style="width: 150px;">{{ role.name }}</span>
+                        <!-- 지원자 학과 -->
+                        <span style="width: 150px;">{{ user.major }}</span>
+                        <!-- 지원자 이름 -->
+                        <a style="width: 150px;" href="#" style="font-size: 20px; margin-top: 2px"
+                            class="selected-user-name-{{user.id}}">{{ user.name }}</a>
+                        <!-- 뱃지 이미지 태그 추가해야 하는 박스 -->
+
+                        <!-- 수락하기 거절하기 버튼 -->
+                        <div style="width: 150px;" class="applicants-buttons">
+                            <button class="red-btn" onclick="expulsion(this)"
+                                name="{{contest.id}}-{{role.id}}-{{user.id}}">추방하기</button>
+                        </div>
+                    </div>
+                    <!-- 카드 끝 -->
+                    {% endfor %}
+                    {% endfor %}
+
+                </div>
+            </div>
+            <hr>
+            <div class="applicants-box">
+                <span>지원한 사람들</span>
+
+                <div class="applicants-list-box">
+                    {% for role in contest.role_set.all %}
+                    {% for user in role.not_confirmed_members.all %}
+                    <!-- 카드 시작 -->
+                    <div class="applicants-card">
+                        <!-- 포지션 이름 -->
+                        <span>{{ role.name }}</span>
+                        <!-- 지원자 학과 -->
+                        <span>{{ user.major }}</span>
+                        <!-- 지원자 이름 -->
+                        <a href="#" style="font-size: 20px; margin-top: 2px"
+                            class="selected-user-name-{{user.id}}">{{ user.name }}</a>
+                        <!-- 뱃지 이미지 태그 추가해야 하는 박스 -->
+
+                        <!-- 수락하기 거절하기 버튼 -->
+                        <div class="applicants-buttons">
+                            <button class="green-btn" onclick="confirm_(this)"
+                                name="{{contest.id}}-{{role.id}}-{{user.id}}">수락하기</button>
+                            <button class="red-btn" onclick="deny(this)"
+                                name="{{contest.id}}-{{role.id}}-{{user.id}}">거절하기</button>
+                        </div>
+                    </div>
+                    <!-- 카드 끝 -->
+                    {% endfor %}
+                    {% endfor %}
+
+                </div>
+            </div>
+            {% else %}
+            <div class="recruit-boxes">
+                <div class="recruiting-box">
+                    <span>모집 중인 포지션</span>
+
+                    {% for role in contest.role_set.all %}
+                    {% if role.is_full == False %}
+                    <!-- 모집 중인 포지션 하나에 대한 카드 -->
+                    <div class="recuriting-card">
+                        <!-- 포지션 이름 -->
+                        <span>{{ role.name }}</span>
+                        <!-- 모집 인원 수 -->
+                        <div><span>{{ role.max_size }}</span><span>명</span></div>
+                        <a href="{% url 'register' role.id contest.id %}" class="green-btn"
+                            style="color: white;">지원하기</a>
+                    </div>
+                    <!-- 카드 끝 -->
+                    {% endif %}
+                    {% endfor %}
+
+                </div>
+                <div class=" recruitment-completed-box">
+                    <span>모집 완료된 포지션</span>
+                    {% for role in contest.role_set.all %}
+                    {% if role.is_full == True %}
+                    <!-- 모집 중인 포지션 하나에 대한 카드 -->
+                    <div class="recuriting-card">
+                        <!-- 포지션 이름 -->
+                        <span>{{ role.name }}</span>
+                        <!-- 멤버 이름 -->
+                        {% for user in role.confirmed_members.all %}
+                        <span>{{ user.name }}</span>
+                        {% endfor %}
+                    </div>
+                    <!-- 카드 끝 -->
+                    {% endif %}
+                    {% endfor %}
+
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+</main>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+    function confirm_(e) {
+        ids = $(e).attr('name').split("-");
+        contest_id = ids[0]
+        role_id = ids[1]
+        user_id = ids[2]
+        console.log(contest_id, role_id, user_id)
+
+        selected_user_name = document.getElementsByClassName("selected-user-name-" + user_id)[0].innerText
+        console.log(selected_user_name)
+        if (!confirm(selected_user_name + " 님을 팀으로 수락 하시겠습니까?")) {
+            return
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "{% url 'confirm' %}",
+            data: {
+                "contest_id": contest_id,
+                "role_id": role_id,
+                "user_id": user_id,
+                "csrfmiddlewaretoken": '{{ csrf_token }}',
+            },
+            dataType: "json",
+            success: function (response) {
+                console.log(response.message);
+                if (response.message === "fail") {
+                    alert(response.role_name + "은 최대 " + response.role_max_size + " 만큼만 등록 가능합니다.")
+                    return
+                } else {
+                    parent = $(e).parent().parent().remove()
+                    console.log(parent)
+                    txt = `
+                    <div style="width: 750px;" class="applicants-card my-team">
+                        <span style="width: 150px;">${response.role_name}</span>
+                        <span style="width: 150px;">${response.major}</span>
+                        <a style="width: 150px;" href="{% url 'portfolio_list' %}" style="font-size: 20px; margin-top: 2px"
+                            class="selected-user-name-${user_id}">${response.user_name}</a>
+                        <div style="width: 150px;" class="applicants-buttons">
+                            <button class="red-btn" onclick="expulsion(this)"
+                                name="${contest_id}-${role_id}-${user_id}">추방하기</button>
+                        </div>
+                    </div>
+                    `
+                    console.log(txt)
+                    document.getElementsByClassName("my-team")[0].innerHTML += txt
+                }
+            },
+            error: function (request, status, error) {
+                alert("통신 실패")
+            },
+        });
+    }
+
+    function deny(e) {
+        ids = $(e).attr('name').split("-");
+        contest_id = ids[0]
+        role_id = ids[1]
+        user_id = ids[2]
+        console.log(contest_id, role_id, user_id)
+
+        selected_user_name = document.getElementsByClassName("selected-user-name-" + user_id)[0].innerText
+        console.log(selected_user_name)
+        if (!confirm(selected_user_name + " 님을 팀에서 추방 하시겠습니까??")) {
+            return
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "{% url 'deny' %}",
+            data: {
+                "contest_id": contest_id,
+                "role_id": role_id,
+                "user_id": user_id,
+                "csrfmiddlewaretoken": '{{ csrf_token }}',
+            },
+            dataType: "json",
+            success: function (response) {
+                parent = $(e).parent().parent().remove()
+            },
+            error: function (request, status, error) {
+                alert("통신 실패")
+            },
+        });
+    }
+
+    function expulsion(e) {
+        ids = $(e).attr('name').split("-");
+        contest_id = ids[0]
+        role_id = ids[1]
+        user_id = ids[2]
+        console.log(contest_id, role_id, user_id)
+
+        selected_user_name = document.getElementsByClassName("selected-user-name-" + user_id)[0].innerText
+        console.log(selected_user_name)
+        if (!confirm(selected_user_name + " 님을 팀에서 추방 하시겠습니까??")) {
+            return
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "{% url 'expulsion' %}",
+            data: {
+                "contest_id": contest_id,
+                "role_id": role_id,
+                "user_id": user_id,
+                "csrfmiddlewaretoken": '{{ csrf_token }}',
+            },
+            dataType: "json",
+            success: function (response) {
+                parent = $(e).parent().parent().remove()
+            },
+            error: function (request, status, error) {
+                alert("통신 실패")
+            },
+        });
+    }
+</script>
+
+{% endblock %}
+
+{% block script %}
+<!-- 그 밖의 script를 넣어주세요. 아래는 예시입니다. -->
+<!-- <script src="{% static 'js/main.js' %}"></script> -->
+{% endblock %}

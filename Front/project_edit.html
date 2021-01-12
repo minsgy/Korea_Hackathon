@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="base/reset.css">
+    <link rel="stylesheet" href="base/base.css">
+    <link rel="stylesheet" href="project_edit.css">
+    <title>안나소 - 나를 표현하는 가장 쉬운 방법</title>
+</head>
+
+<body>
+    <header>
+        <div class="header-links">
+            <a href=""><img src="base/images/anaso_kor_logo.png" alt=""></a>
+            <nav>
+                <a href="">포트폴리오</a>
+                <a href="">공모전</a>
+            </nav>
+        </div>
+        <div class="header-btns">
+            <button class="black-btn" type="button" onclick="">회원가입</button>
+            <button class="black-btn" type="button" onclick="">로그인</button>
+        </div>
+    </header>
+<!-- 여기부터 컨텐츠 부분 입니다.  -->
+    <main>
+        <form name="edit" method="GET" action="/" class="full-div">
+                <div class="title-info-div">
+                    <p class="title-text">
+                        제목
+                        <input class="inputbox title"type="text" placeholder="제목을 입력하세요. ">
+                    </p>
+                    <p class="title-text">
+                        프로젝트 설명
+                        <input class="inputbox project-info" type="text" placeholder="프로젝트 설명을 입력하세요. ">
+                    </p>
+                    <p class="title-text">
+                        날짜 
+                        <input class="inputbox date-width" type="date">
+                        태그
+                        <input class="inputbox date-width" type="text" placeholder="태그는 ','으로 구분 됩니다.">
+                        역할
+                        <input class="inputbox date-width2" type="text" placeholder="역할을 입력하세요. ">
+                    </p>
+                </div>
+                <!-- ------에디터 들어가는 부분 ------- -->
+                <div class="editor">
+                <!-- ----------------- EDITOR--------------- -->
+                </div>
+                <div class="button-div">
+                    <button class="submit-button" type="submit">작성하기</button>
+                </div>
+        </form>
+    </main>
+<!-- 여기까지가 컨텐츠 부분 입니다.  -->
+<footer>
+    <div class="footer-logos">
+        <img src=" ./images/anaso_eng_logo.png" alt="">
+        <span>© 고카톤 순천향대학교 멋사팀</span>
+        <span>안나소는 안녕 나를 소개하지의 줄임말입니다.</span>
+        <span>안나소는 전국의 모든 대학생을 응원합니다.</span>
+    </div>
+    <div class="footer-developers">
+        <span>만든 사람들</span>
+        <div>
+            <span>Front-End</span>
+            <span>컴퓨터공학과 16학번 장하얀</span>
+            <span>의용메카트로닉스공학과 19학번 하유민</span>
+        </div>
+        <div>
+            <span>Back-End</span>
+            <span>컴퓨터소프트웨어공학과 15학번 이남준</span>
+            <span>컴퓨터소프트웨어공학과 16학번 최민석</span>
+            <span>컴퓨터소프트웨어공학과 19학번 김태완</span>
+        </div>
+    </div>
+</footer>
+</body>
+
+
+
+</html>

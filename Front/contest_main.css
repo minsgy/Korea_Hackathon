@@ -1,0 +1,199 @@
+/* 스몰 헤더 */
+.small-header {
+    width: var(--main-width);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: #fff;
+}
+
+/* 검색 바 */
+.search-bar input {
+    float: left;
+    width: 300px;
+    height: 35px;
+    line-height: normal;
+    padding: .8em .5em;
+    font-size: 16px;
+    border: 0;
+    border-bottom: 2px solid #000;
+    outline-style: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.search-bar img {
+    float: left;
+    width: 20px;
+    height: 20px;
+    padding: 8px 0 0 5px;
+}
+
+/* -------------------------------- */
+
+.small-header nav {
+    margin: 30px 0 10px 0;
+}
+
+.small-header a {
+    font-size: 20px;
+    color: #000;
+    text-decoration: none;
+    margin-right: 3em;
+}
+
+.small-header a:last-of-type {
+    margin: 0;
+}
+
+.small-header a:hover {
+    color: var(--anaso-green);
+    font-weight: 700;
+}
+
+/* -------------------------------- */
+/* 디테일 메인 섹션 */
+
+section {
+    width: 100%;
+    height: 100%;
+    background-color: var(--anaso-lightgray);
+    padding: 30px 0 80px 0;
+}
+
+/* -------------------------------- */
+/* 필터 버튼 */
+
+.nav-links-box {
+    width: var(--main-width);
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.now-btn,
+.not-btn {
+    padding: 10px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 20px;
+    border-radius: 10px;
+    margin-right: 5px;
+}
+
+.now-btn {
+    background-color: var(--anaso-green);
+    color: #fff !important;
+}
+
+.now-btn:hover {
+    background-color: #3dc184;
+    transition: .3s;
+}
+
+.not-btn {
+    background-color: var(--anaso-gray);
+    color: #fff !important;
+}
+
+.not-btn:hover {
+    background-color: var(--anaso-darkgray);
+    color: #fff;
+    transition: .3s;
+}
+
+
+/* -------------------------------- */
+/* 공모전 카드 리스트 */
+
+.contest-list {
+    width: var(--main-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+}
+
+
+/* -------------------------------- */
+/* 공모전 카드 */
+
+.contest-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 330px;
+    min-height: 500px;
+    padding: 15px 0;
+    margin: 15px;
+    background-color: #fff;
+    box-shadow: 1px 3px 5px var(--anaso-darkgray);
+}
+
+.contest-card img {
+    max-width: 320px;
+    max-height: 420px;
+    overflow: hidden;
+}
+
+/* 타이틀 부분 */
+.contest-card-title {
+    width: 90%;
+    padding: 0 10px;
+    margin: 5px 0;
+}
+
+/* 카테고리 */
+.contest-card-title>span:first-of-type {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 15px;
+    margin-right: 5px;
+    padding: 3px 5px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 300;
+    background-color: var(--anaso-green);
+    color: #fff;
+}
+
+/* 디데이 */
+.contest-card-title span:last-of-type,
+.contest-card-title span:nth-last-of-type(2) {
+    font-family: 'GmarketSansMedium';
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* 콘테스트 정보 */
+.contest-card-info {
+    width: 85%;
+    margin: 5px 0;
+}
+
+.contest-card-info>span {
+    margin: 5px 0;
+}
+
+/* 게시글 이름 */
+.contest-card-info>span:first-of-type {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.contest-card-info>p {
+    margin: 10px 0;
+}
+
+.contest-card-info>p>span {
+    margin-right: 4px;
+    color: var(--anaso-darkgray);
+}

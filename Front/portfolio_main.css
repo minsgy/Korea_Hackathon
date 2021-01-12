@@ -1,0 +1,217 @@
+/* 스몰 헤더 */
+.small-header {
+    width: var(--main-width);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: #fff;
+}
+
+
+/* 검색 바 */
+.search-bar input {
+    float: left;
+    width: 400px;
+    height: 35px;
+    line-height: normal;
+    padding: .8em .5em;
+    font-size: 16px;
+    border: 0;
+    border-bottom: 2px solid #000;
+    outline-style: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.search-bar img {
+    float: left;
+    width: 20px;
+    height: 20px;
+    padding: 8px 0 0 5px;
+}
+
+/* 배너 공간 */
+.banner-div {
+    width: 100%;
+    height: 200px;
+    margin-top: 5vh;
+    background-color: rgb(84, 84, 214);
+}
+
+/* 컨텐츠 시작 */
+.card-flex {
+    width: 1100px;
+    display: flex;
+    margin: 0 auto;
+    flex-flow: wrap;
+}
+
+/* 각 카드 */
+.card {
+    width: 320px;
+    height: 400px;
+    margin: 8vh 20px;
+    border: 1px solid #e4e4e4;
+    box-shadow: 2px 2px 3px 3px #e4e4e442;
+    text-align: center;
+}
+
+.card:hover {
+    cursor: pointer;
+    box-shadow: 3px 5px 8px 5px #bebebe8f;
+    transition: .3s;
+    transform: translate(0, -5%);
+}
+
+/*이미지 설정*/
+.card img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin: 15px 0 10px 0;
+}
+
+/* 이름 */
+.card p:nth-of-type(1) {
+    font-size: 30px;
+    font-weight: 700;
+    padding-bottom: 3px;
+
+}
+
+/* 학과 */
+.card p:nth-of-type(2) {
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 5px;
+}
+
+/* 한마디 */
+.card p:nth-of-type(3) {
+    font-size: 20px;
+    font-weight: 400;
+    padding-top: 30px;
+}
+
+.card p:nth-of-type(5) {
+    padding-top: 23px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: 300;
+
+}
+
+.card p:nth-of-type(5) span {
+    padding-right: 5px;
+    margin-bottom: 20px;
+    height: 10px;
+}
+
+.card p:nth-of-type(5) span:nth-of-type(1) {
+    background-color: rgb(152, 152, 255);
+}
+
+.card p:nth-of-type(5) span:nth-of-type(2) {
+    background-color: rgb(255, 209, 140);
+}
+
+.card p:nth-of-type(5) span:nth-of-type(3) {
+    background-color: rgb(144, 172, 113);
+}
+
+.badge {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.badge img {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+.slide {
+    height: 470px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+
+.slide ul {
+    width: calc(100% * 2);
+    display: flex;
+    transition: 1s;
+}
+
+.slide li {
+    width: calc(100% / 2);
+    height: 470px;
+}
+
+/* 각 슬라이드 배경 색깔 */
+.slide li:nth-child(1) {
+    background: white;
+}
+
+.slide li:nth-child(2) {
+    background: white;
+}
+
+
+
+.slide input {
+    display: none;
+}
+
+/* 슬라이드 넘기는 단추 */
+.slide .bullet {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+}
+
+.slide .bullet label {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    background: rgb(179, 179, 179);
+    font-size: 0;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+/* 슬라이드 조작 */
+#pos1:checked~ul {
+    margin-left: 0;
+}
+
+#pos2:checked~ul {
+    margin-left: -100%;
+}
+
+
+/* 단추 조작 */
+#pos1:checked~.bullet label:nth-child(1),
+#pos2:checked~.bullet label:nth-child(2) {
+    background: var(--anaso-green)
+}

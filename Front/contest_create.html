@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/reset.css">
+    <link rel="stylesheet" href="../static/css/base.css">
+    <link rel="stylesheet" href="./contest_detail_writer.css">
+    <link rel="stylesheet" href="./contest_create.css">
+    <title>안나소 - 나를 표현하는 가장 쉬운 방법</title>
+</head>
+
+<body>
+    <header>
+        <div class="header-links">
+            <a href=""><img src="../base/images/anaso_kor_logo.png" alt=""></a>
+            <nav>
+                <a href="">포트폴리오</a>
+                <a href="">공모전</a>
+            </nav>
+        </div>
+        <div class="header-btns">
+            <button class="black-btn" type="button" onclick="">회원가입</button>
+            <button class="black-btn" type="button" onclick="">로그인</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="small-header">
+            <div class="search-bar">
+                <input type="text" placeholder="찾으시는 공모전이 있나요?">
+                <a href=""><img src="images/search.png" alt="검색 아이콘"></a>
+            </div>
+            <nav>
+                <a href="">전체</a>
+                <a href="">기획/아이디어</a>
+                <a href="">디자인/광고/마케팅</a>
+                <a href="">사진/영상/UCC</a>
+                <a href="">문학/수기/시나리오</a>
+            </nav>
+        </div>
+        <section>
+            <div class="post-bg">
+                <div class="info-insert-box">
+                    <span>제목</span>
+                    <input type="text"><br>
+                    <span>공모전 이름</span>
+                    <input type="text"><br>
+                    <span>카테고리</span>
+                    <select name="" id="">
+                        <option value="">기획/아이디어</option>
+                        <option value="">디자인/광고/마케팅</option>
+                        <option value="">사진/영상/UCC</option>
+                        <option value="">문학/수기/시나리오</option>
+                        <option value="">IT/소프트웨어</option>
+                    </select>
+                    <span>주최기관</span>
+                    <input type="text"><br>
+                    <span>마감기한</span>
+                    <input type="date">
+                    <span>전체 모집 인원</span>
+                    <input type="number" min="0">
+                    <span>명</span>
+                </div>
+                <hr>
+                <div class="body-box-edit">
+                    <textarea class="" rows="30" cols="155" name="detail" placeholder="공모전의 내용을 작성해주세요."
+                        required></textarea><br>
+                </div>
+                <hr>
+                <div class="positions-text">
+                    <span>모집할 포지션</span>
+                    <button class="green-btn">추가</button>
+                </div>
+                <div class="positions">
+                    <div class="positions-card">
+                        <input type="text">
+                        <input type="number" min="0">
+                        <span>명</span>
+                        <button class="red-btn">삭제</button>
+                    </div>
+                </div>
+                <div class="submit-box">
+                    <button class="green-btn" type="submit">확인</button>
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-logos">
+            <img src="../base/images/anaso_eng_logo.png" alt="">
+            <span>© 고카톤 순천향대학교 멋사팀</span>
+            <span>안나소는 안녕 나를 소개하지의 줄임말입니다.</span>
+            <span>안나소는 전국의 모든 대학생을 응원합니다.</span>
+        </div>
+        <div class="footer-developers">
+            <span>만든 사람들</span>
+            <div>
+                <span>Front-End</span>
+                <span>컴퓨터공학과 16학번 장하얀</span>
+                <span>의용메카트로닉스공학과 19학번 하유민</span>
+            </div>
+            <div>
+                <span>Back-End</span>
+                <span>컴퓨터소프트웨어공학과 15학번 이남준</span>
+                <span>컴퓨터소프트웨어공학과 16학번 최민석</span>
+                <span>컴퓨터소프트웨어공학과 19학번 김태완</span>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

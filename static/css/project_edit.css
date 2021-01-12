@@ -1,0 +1,88 @@
+/* font-family: 'NanumBarunGothic';
+    weight 300 400 700 */
+
+
+main {
+    width: var(--main-width);
+    margin: 0 auto;
+}
+
+p {
+    padding: 10px 0;
+}
+
+.title-info-div {
+    width: 1100px;
+    padding: 20px 0;
+
+}
+
+.title-text {
+    font-family: 'NanumBarunGothic';
+    font-size: 22px;
+    font-weight: 700;
+    color: #272727;
+}
+
+/* ---------------여기 에디ㅓㅌ */
+.editor {
+    height: 800px;
+    width: 1100px;
+
+}
+
+.inputbox {
+    margin-left: 10px;
+    font-family: 'NanumBarunGothic';
+    font-weight: 300;
+    font-size: 18px;
+    border-style: none;
+    border-bottom: 2px solid #757575;
+    padding: 3px;
+}
+
+.inputbox:focus {
+
+    outline-style: none;
+}
+
+.title {
+    width: 1040px;
+}
+
+.project-info {
+    width: 960px;
+}
+
+.date-width {
+    margin: 0 10px 0 8px;
+    width: 300px;
+}
+
+.date-width2 {
+    width: 310px;
+}
+
+
+.submit-button {
+    height: 80px;
+    width: 1100px;
+    font-family: 'NanumBarunGothic';
+    font-size: 25px;
+    font-weight: 400px;
+    color: white;
+    margin: 14px 0;
+    background-color: black;
+    border-radius: 5px;
+}
+
+.submit-button:hover {
+    cursor: pointer;
+    border-style: none;
+    background-color: #7EDBB0;
+    transition: .3s;
+}
+
+.button-div {
+    text-align: center;
+}

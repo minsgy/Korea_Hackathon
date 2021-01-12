@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/user_editor.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<main>
+    <form action="{% url "user_editor" %}" method="POST">
+       {% csrf_token %} 
+        <div class="mypage-div">
+            <p class="mypage-title">
+                내 정보
+            </p>
+            
+            <p>
+                <img src="{{users.image.url}}">
+            </p>
+            
+            <div class="filebox">
+                <label for="ex_file">프로필 사진 변경</label>
+                <input type="file" id="ex_file">
+            </div>
+
+            <div class="mypage-info">
+                <p>
+                    <span>이름</span>
+                    <span>{{users.name}}</span>
+                </p>
+
+                <p>
+                    <span>학교</span>
+                    <span>{{users.university}}</span>
+                </p>
+
+                <p>
+                    <span>전공</span>
+                    <span>{{users.major}}</span>
+                </p>
+                <p>
+
+                    <span>아이디</span>
+                    <span>{{users.username}}</span>
+                </p>
+                <p>
+                    <span>전화번호</span>
+                        <input type="text" name="phone_number" value={{users.phone_number}} placeholder="휴대폰 번호를 입력하세요." required>
+
+                    <span>이메일</span>
+                        <input type="text" name="email" value={{users.email}} placeholder="이메일을 입력하세요." required>
+
+                    <span>한 줄 소개</span>
+                        <input type="text" name="description" value={{users.description}} placeholder="한 줄 소개를 입력하세요." required>
+
+                    <span>해시태그</span>
+                        <input type="text" name="tags" placeholder="나를 나타내는 해시 태그 입력. ','로 구분" required>
+
+                    <button type="submit">확인</button>
+                    
+                </p>
+            </div>
+        </div>
+    </form>
+</main>
+<!-- 여기까지가 컨텐츠 부분 입니다.  -->
+{% endblock %}

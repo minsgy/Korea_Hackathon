@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/portfolio_list.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- 여기부터 컨텐츠 부분 입니다.  -->
+    <main>
+        
+        <div class="small-header">
+            
+            <form action="{% url 'search_list' %}">
+                <div class="search-bar">
+                    <input type="text" name="search" placeholder="찾는 사람의 이름을 입력해주세요.">
+                    <a href="{% url "search_list" %}"><img src="{% static 'images/search.png' %}" alt="검색 아이콘"></a>
+                </div>
+            </form>
+            <!-- 롤링배너 부분 -->
+            <div class="slide">
+                <input type="radio" name="pos" id="pos1" checked>
+                <input type="radio" name="pos" id="pos2">
+            
+                <!-- 슬라이드 이미지 -->
+                <ul>
+                    <li><img src="{% static 'images/배너1.png' %}" alt="logo" width="920px" height="470px"></li>
+                    <li><img src="{% static 'images/배너2.png' %}" alt="logo" width="920px" height="470px"></li>
+                </ul>
+
+                <!-- 슬라이드 단추  -->
+                <p class="bullet">
+                    <label for="pos1">1</label>
+                    <label for="pos2">2</label>
+                </p>
+        </div>
+        </div>
+        <div class="card-flex">
+        {% for user in users %}
+            {% if user.username == 'admin' %}
+                
+            {% else %}
+        
+            <a href="{% url 'portfolio_detail' user.pk %}">
+                <div class="card">
+                    <img src="{{user.image.url}}">
+                    <p>
+                        {{user.name}}
+                    </p>
+                    <p>
+                        {{user.major}}
+                    </p>
+                    <p>
+                        {{user.description}}
+                    </p>
+                    <p class="badge">
+                        {% if users.hit_count >= 20 %}
+                        <img src="{% static 'images/badge/atendee_badge_sm.png' %}">
+                        {% endif %}
+                        {% if users.project.count >= 5 %}
+                        <img src="{% static 'images/badge/planner_badge_sm.png' %}">
+                        {% endif %}
+                        {% if users.contest_set.count >= 5 %}
+                        <img src="{% static 'images/badge/project_badge_sm.png' %}">
+                        {% endif %}
+                        {% if users.confirmed_member_set.count >= 5 %}
+                        <img src="{% static 'images/badge/view_badge_sm.png' %}">
+                        {% endif %}
+                    </p>
+                    <p>
+                        {% for hashtags in user.hashtags.all %}
+                        <span>#{{hashtags.tag_name}}</span>
+                        {% endfor %}
+                    </p>
+                </div>
+            </a>  
+            {% endif %}
+        {% endfor %}
+
+        </div>
+        
+    </main>
+{% endblock %}
+<!-- 조회수 뱃지 -->
+              

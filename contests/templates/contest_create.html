@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head %}
+<!-- 그 밖의 css를 넣어주세요. -->
+<link rel="stylesheet" href="{% static 'css/contest_detail_writer.css' %}">
+<link rel="stylesheet" href="{% static 'css/contest_create.css' %}">
+{% endblock %}
+
+{% block title %}
+<title>안나소 - 나를 표현하는 가장 쉬운 방법</title>
+{% endblock %}
+
+{% block content %}
+
+<div class="small-header">
+    <div class="search-bar">
+        <input type="text" placeholder="찾으시는 공모전이 있나요?">
+        <a href=""><img src="{% static 'images/search.png' %}" alt="검색 아이콘"></a>
+    </div>
+    <nav>
+        <a href="">전체</a>
+        <a href="">기획/아이디어</a>
+        <a href="">디자인/광고/마케팅</a>
+        <a href="">사진/영상/UCC</a>
+        <a href="">문학/수기/시나리오</a>
+    </nav>
+</div>
+<section>
+    <div class="post-bg">
+        <form action="{% url 'contest_create' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="info-insert-box">
+                <span>제목</span>
+                <input type="text" name="title" placeholder="제목" required><br>
+                <span>공모전 이름</span>
+                <input type="text" name="contest_name" placeholder="공모전 이름" required><br>
+                <span>카테고리</span>
+                <select name="category" id="" required>
+                    <option value="기획/아이디어">기획/아이디어</option>
+                    <option value="디자인/광고/마케팅">디자인/광고/마케팅</option>
+                    <option value="사진/영상/UCC">사진/영상/UCC</option>
+                    <option value="문학/수기/시나리오">문학/수기/시나리오</option>
+                    <option value="IT/소프트웨어">IT/소프트웨어</option>
+                </select>
+                <span>주최기관</span>
+                <input type="text" name="contest_organizer" placeholder="공모전 주최기관" required><br>
+                <span>마감기한</span>
+                <input type="date" name="deadline" required>
+            </div>
+            <hr>
+            <div class="body-box-edit">
+                <textarea class="" rows="30" cols="108" name="detail" placeholder="공모전의 내용을 작성해주세요."
+                    required></textarea><br>
+            </div>
+            <hr>
+            <div class="positions-text">
+                <span>모집할 포지션</span>
+                <button class="green-btn" type="button" onclick="CreateTextBox();">추가</button>
+            </div>
+            <div class="positions">
+                <div class="positions-card">
+                    <div id="txtPanel">
+                        <div>
+                            <input type="text" class="role_name_input" name="role_name_0" required>
+                            <input type="number" min="0" placeholder="최대 인원 수를 적어주세요" name="role_size_0">
+                        </div>
+                    </div>
+                    <button type="button" class="red-btn" onclick="ClearTextBox();">삭제</button>
+                </div>
+            </div><br>
+            <input type="file" name="poster" required><br><br>
+            <div class="submit-box">
+                <button class="green-btn" type="submit">확인</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block script %}
+<!-- 그 밖의 script를 넣어주세요. -->
+<script type="text/javascript">
+    var labels = document.getElementsByTagName("label")
+    for (i = 0; i < labels.length; i++) {
+        if (labels[i].parentNode.tagName === 'P') {
+            labels[i].parentNode.remove()
+        }
+    }
+
+    // input box 를 하나 만드는 함수
+    function CreateTextBox() {
+
+        // job_name_input 이라는 클래스 이름을 가진 요소들의 갯수를 구한다
+        var count = document.getElementsByClassName("role_name_input").length;
+
+        // name에 job_name_갯수 를 넣어 innerhtml을 해준다
+        var txt =
+            `<div><input type='text' class="role_name_input" placeholder="역할명" name="role_name_${count}" required><input type='text' placeholder="최대 인원 수를 적어주세요" name="role_size_${count}" required><br></div>`;
+        document.getElementById("txtPanel").innerHTML += txt;
+    }
+
+    // input box 를 하나 지우는 함수
+    function ClearTextBox() {
+
+        // job_name_input 이라는 클래스를 가진 요소가 1개이면 바로 함수 종료
+        var count = document.getElementsByClassName("role_name_input").length;
+        if (count == 1) {
+            alert("더이상 삭제할 수 없습니다.")
+            return;
+        }
+
+        // 마지막 textPanel 의 자식 요소들 중 마지막 요소를 지우는 코드
+        // br 요소 때문에 두번 반복
+        document.getElementById("txtPanel").lastChild.remove()
+    }
+</script>
+{% endblock %}

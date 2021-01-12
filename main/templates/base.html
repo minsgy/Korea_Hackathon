@@ -1,0 +1,70 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+    {% block head %}{% endblock %}
+
+    {% block title %}
+    <!-- <title>안나소 - 나를 표현하는 가장 쉬운 방법</title> -->
+    {% endblock %}
+</head>
+
+<body>
+    <header>
+        <div class="header-links">
+            <a href="{% url 'main' %}"><img src="{% static 'images/anaso_kor_logo.png' %}" alt=""></a>
+            <nav>
+                <a href="{% url 'portfolio_list' %}">포트폴리오</a>
+                <a href="{% url 'contest_list' %}">공모전</a>
+            </nav>
+        </div>
+        {% if user.is_authenticated %}
+        <div class="header-btns">
+            <button class="black-btn" type="button" onclick="location.href='{% url 'portfolio_detail' user.pk %}';">{{ user.name }}</button>
+            <button class="black-btn" type="button" onclick="location.href='{% url 'user_logout' %}';">로그아웃</button>
+        </div>
+        {% else %}
+        <div class="header-btns">
+            <button class="black-btn" type="button" onclick="location.href='{% url 'user_signup' %}';">회원가입</button>
+            <button class="black-btn" type="button" onclick="location.href='{% url 'user_login' %}';">로그인</button>
+        </div>
+        {% endif %}
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <div class="footer-logos">
+            <img src="{% static 'images/anaso_eng_logo.png' %}" alt="">
+            <span>© 고카톤 순천향대학교 멋사팀</span>
+            <span>안나소는 안녕 나를 소개하지의 줄임말입니다.</span>
+            <span>안나소는 전국의 모든 대학생을 응원합니다.</span>
+        </div>
+        <div class="footer-developers">
+            <span>만든 사람들</span>
+            <div>
+                <span>Front-End</span>
+                <span>컴퓨터공학과 16학번 장하얀</span>
+                <span>의용메카트로닉스공학과 19학번 하유민</span>
+            </div>
+            <div>
+                <span>Back-End</span>
+                <span>컴퓨터소프트웨어공학과 15학번 이남준</span>
+                <span>컴퓨터소프트웨어공학과 16학번 최민석</span>
+                <span>컴퓨터소프트웨어공학과 19학번 김태완</span>
+            </div>
+        </div>
+    </footer>
+    {% block script %}{% endblock %}
+</body>
+
+</html>
