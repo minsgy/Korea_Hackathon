@@ -14,7 +14,7 @@
 ## 👨‍👨‍👨‍👧‍👧Creater Member
 
 ### 🔙Back-end
-- [최민석](https://github.com/minsgy) 🚩Team Leader, 🏷[](https://velog.io/@minsgy/고카톤-대회-출전-후기고카톤)
+- [최민석](https://github.com/minsgy) 🚩Team Leader, 🏷[고카톤후기](https://velog.io/@minsgy/고카톤-대회-출전-후기고카톤)
 - [이남준](https://github.com/ningpop)  
 - [김태완](https://github.com/wwan13)  
 
