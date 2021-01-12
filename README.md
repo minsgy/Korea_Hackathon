@@ -1,4 +1,4 @@
-# 🐯Korea_Hackathon ![공식사이트](https://koreahacks.online/)
+# 🐯Korea_Hackathon [공식사이트](https://koreahacks.online/)
 2021 1.9 ~ 1.10    
 🐯 고려대학교 해커톤 대회 - 순천향대학교 멋쟁이사자처럼 Team  
 
