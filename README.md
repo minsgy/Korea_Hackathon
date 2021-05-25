@@ -2,9 +2,27 @@
 2021 1.9 ~ 1.10    
 🐯 고려대학교 해커톤 대회 - 순천향대학교 멋쟁이사자처럼  
 
-
 ## ⚡Link
 - [홈페이지 링크](http://anaso.ml/)
+
+## DEMO
+
+### 메인
+<img src="./DEMO/메인.gif" width="450px" />
+### 회원가입
+<img src="./DEMO/메인.gif" width="450px" />
+### 포트폴리오
+<img src="./DEMO/메인.gif" width="450px" />
+### 프로젝트 템플릿
+<img src="./DEMO/메인.gif" width="450px" />
+### 공모전 신청
+<img src="./DEMO/메인.gif" width="450px" />
+![image](https://user-images.githubusercontent.com/60251579/119508186-8053d600-bdaa-11eb-98bb-69d5b9dd4c7b.png)
+
+
+
+### 
+
 
 ## 🏆 수상 내역 (23개 팀 참가)
 
