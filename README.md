@@ -7,28 +7,34 @@
 
 ## 🖥 DEMO
 
-### 메인
+### 메인/회원가입
 
-<img src="./DEMO/메인.gif" width="450px" />
+<span>
+<img src="https://github.com/minsgy/Korea_Hackathon/blob/main/DEMO/%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AB.gif" height="250px"  />
+</span>
+<span>
+<img src="https://github.com/minsgy/Korea_Hackathon/blob/main/DEMO/%E1%84%92%E1%85%AC%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%80%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8.gif" height="250px" />
+</span>
 
-### 회원가입
+### 포트폴리오/프로젝트 등록
 
-<img src="./DEMO/회원가입.gif" width="450px" />
-
-### 포트폴리오
-
-<img src="./DEMO/포트폴리오.gif" width="450px" />
-
-### 프로젝트 템플릿
-
-<img src="./DEMO/프로젝트생성.gif" width="450px" />
+<span>
+<img src="https://github.com/minsgy/Korea_Hackathon/blob/main/DEMO/%E1%84%91%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9.gif" height="250px"  />
+</span>
+<span>
+<img src="https://github.com/minsgy/Korea_Hackathon/blob/main/DEMO/%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%8C%E1%85%A6%E1%86%A8%E1%84%90%E1%85%B3%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC.gif" height="250px" />
+</span>
 
 ### 공모전 신청
+<span>
+<img src="https://github.com/minsgy/Korea_Hackathon/blob/main/DEMO/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%86%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB.gif" height="250px" />
+</span>
 
-<img src="./DEMO/공모전.gif" width="450px" />
-
+<span>
+  
 ![image](https://user-images.githubusercontent.com/60251579/119508186-8053d600-bdaa-11eb-98bb-69d5b9dd4c7b.png)
 
+</span>
 
 ## 🏆 수상 내역 (23개 팀 참가)
 
