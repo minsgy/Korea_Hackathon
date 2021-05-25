@@ -9,7 +9,7 @@
 
 ### 메인
 
-<img src="DEMO/메인.gif" width="450px" />
+<img src="../DEMO/메인.gif" width="450px" />
 
 ### 회원가입
 
