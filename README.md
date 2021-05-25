@@ -5,27 +5,27 @@
 ## ⚡Link
 - [홈페이지 링크](http://anaso.ml/)
 
-## DEMO
+## 🖥 DEMO
 
 ### 메인
 
-<img src="./DEMO/메인.gif" width="450px" />
+<img src="DEMO/메인.gif" width="450px" />
 
 ### 회원가입
 
-<img src="./DEMO/회원가입.gif" width="450px" />
+<img src="DEMO/회원가입.gif" width="450px" />
 
 ### 포트폴리오
 
-<img src="./DEMO/포트폴리오.gif" width="450px" />
+<img src="DEMO/포트폴리오.gif" width="450px" />
 
 ### 프로젝트 템플릿
 
-<img src="./DEMO/프로젝트생성.gif" width="450px" />
+<img src="DEMO/프로젝트생성.gif" width="450px" />
 
 ### 공모전 신청
 
-<img src="./DEMO/공모전.gif" width="450px" />
+<img src="DEMO/공모전.gif" width="450px" />
 
 ![image](https://user-images.githubusercontent.com/60251579/119508186-8053d600-bdaa-11eb-98bb-69d5b9dd4c7b.png)
 
