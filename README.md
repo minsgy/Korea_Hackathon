@@ -31,9 +31,7 @@
 </span>
 
 <span>
-  
-![image](https://user-images.githubusercontent.com/60251579/119508186-8053d600-bdaa-11eb-98bb-69d5b9dd4c7b.png)
-
+<img src="https://github.com/minsgy/Korea_Hackathon/blob/main/DEMO/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%86%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%8C%E1%85%B5%E1%84%8B%E1%85%AF%E1%86%AB.jpeg" width="450px" height="250px" />
 </span>
 
 ## 🏆 수상 내역 (23개 팀 참가)
