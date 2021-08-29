@@ -9,6 +9,7 @@
 
 ### 메인/회원가입
 
+
 <span>
 <img src="https://github.com/minsgy/Korea_Hackathon/blob/main/DEMO/%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AB.gif" height="250px"  />
 </span>
